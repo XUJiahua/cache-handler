@@ -367,7 +367,7 @@ type ctxKey string
 
 const getterContextCtxKey ctxKey = "getter_context"
 
-func parseCaddyfileGlobalOption(d *caddyfile.Dispenser) (interface{}, error) {
+func parseCaddyfileGlobalOption(d *caddyfile.Dispenser, existingVal interface{}) (interface{}, error) {
 	cfg = &Config{}
 	for d.Next() {
 		for d.NextBlock(0) {
